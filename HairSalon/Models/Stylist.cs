@@ -13,5 +13,7 @@ namespace HairSalon.Models
     {
       this.Clients = new HashSet<Client>();
     }
+
+    
   }
 }

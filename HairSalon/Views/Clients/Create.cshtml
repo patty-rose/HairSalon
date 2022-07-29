@@ -2,25 +2,27 @@
   Layout = "_Layout";
 }
 
-@model HairSalon.Models.Client;
 @using HairSalon.Models;
+@model dynamic;
 
-@* @if (@Model.Cuisine == null)
+@if (@Model.Stylists.Count == 0)
 {
-  <p>No cuisine types have been added yet!</p>
-}  *@
-
-<h4>Add a new Client</h4>
-
-@using (Html.BeginForm()) 
-
+  <p>No stylists have been added yet! Since each client must be assigned to a stylist, you must add a stylist first.</p>
+  <p>@Html.ActionLink("Add a Stylist!", "Create", "Stylists")</p>
+} 
+@if (@Model.Stylists.Count > 0)
 {
-  @Html.LabelFor(model => model.ClientName)
-  @Html.TextBoxFor(model => model.ClientName)
+  <h1>Add a new Client</h1>
+  <h3>All clients must be assigned to a stylist</h3>
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+  {
+    @Html.LabelFor(model => model.Client.ClientName)
+    @Html.TextBoxFor(model => model.Client.ClientName)
 
-  <input type="submit" value="Add new Client"/>
+    @Html.LabelFor(model => model.Client.Client.Stylist)
+    @Html.DropDownList("StylistId")
+
+    <input type="submit" value="Add new Client"/>
+  }
 }
 <p>@Html.ActionLink("Show all Clients", "Index")</p>

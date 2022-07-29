@@ -1,4 +1,29 @@
 body{
   margin: 50px;
-  background-color: pink;
+  background-color: #5c646b;
+  color: #e9eaec;
+}
+
+h1{
+  color:#ffe98f
+}
+
+h3{
+  color:#90adc6
+}
+
+a:link{
+  color:#98e5ff
+}
+
+a:visited{
+  color:#98e5ff
+}
+
+a:hover{
+  color:#90adc6
+}
+
+a:active{
+  color:#fad02c
 }
