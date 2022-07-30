@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.IO;
 using System.Linq;
 
 namespace HairSalon.Controllers
@@ -27,11 +25,9 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
-      dynamic mymodel = new ExpandoObject();
-      mymodel.Client = new Client();
-      mymodel.Stylists = new List<HairSalon.Models.Stylist>();
+      ViewBag.Stylists = new List<Stylist>(_db.Stylists);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
-      return View(mymodel);
+      return View();
     }
 
     [HttpPost]
