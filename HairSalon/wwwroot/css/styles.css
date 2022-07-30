@@ -1,6 +1,5 @@
 body{
-  margin: 50px;
-  background-color: #5c646b;
+  background-color: #90adc6;
   color: #e9eaec;
 }
 
@@ -9,7 +8,7 @@ h1{
 }
 
 h3{
-  color:#90adc6
+  color:#5c646b
 }
 
 a:link{
@@ -21,9 +20,14 @@ a:visited{
 }
 
 a:hover{
-  color:#90adc6
+  color:#5c646b
 }
 
 a:active{
   color:#fad02c
+}
+
+img.navbar{
+  width: 15;
+  height: auto;
 }
