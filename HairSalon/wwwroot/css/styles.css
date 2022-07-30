@@ -27,7 +27,16 @@ a:active{
   color:#fad02c
 }
 
-img.navbar{
-  width: 15;
+nav{
+  background-color: #5c646b;
+}
+
+.navBrand{
+  width: 50%;
+  height: auto;
+}
+
+#footer{
+  width: 20%;
   height: auto;
 }
