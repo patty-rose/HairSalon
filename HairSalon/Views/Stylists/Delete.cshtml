@@ -5,11 +5,52 @@
 @model HairSalon.Models.Stylist
 
 <h1>Delete Stylist</h1>
-<h3>Are you sure you want to delete this stylist? All clients under this stylist will be deleted as well.</h3>
+<p>Are you sure you want to delete this stylist?<br><b>All clients under this stylist will be deleted as well.</b></p>
 
-@Html.DisplayNameFor(model => model.StylistName): @Html.DisplayFor(model => model.StylistName)
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Stylist Name
+      </th>
+      <th>
+        Specialty
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        @Html.DisplayFor(model => model.StylistName)
+      </td>
+      <td>
+        @Html.DisplayFor(model => model.StylistSpecialty)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Assigned clients
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var client in Model.Clients) {
+      <tr>
+        <td>
+          @Html.ActionLink(client.ClientName, "Details", "Clients", new { id = client.ClientId })
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
 @using (Html.BeginForm())
 {
     <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back To Stylists List", "Index")

@@ -31,6 +31,10 @@ nav{
   background-color: #5c646b;
 }
 
+.content{
+  margin-top:8%;
+}
+
 .navBrand{
   width: 250px;
   height: auto;
@@ -39,6 +43,11 @@ nav{
 .nav-item{
   margin-right: 50%;
   color: red;
+}
+
+.splash-img{
+  width:50%;
+  height: auto;
 }
 
 #footer{

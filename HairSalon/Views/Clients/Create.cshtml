@@ -16,8 +16,8 @@
 } 
 @if (stylists.Count > 0)
 {
-  <h1>Add a new Client</h1>
-  <h3>All clients must be assigned to a stylist</h3>
+  <h1>Add a new Client!</h1>
+  <p>Fill out this form to add a new client. All clients must be assigned to a stylist.</p>
   @using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.ClientName)
