@@ -32,12 +32,12 @@ nav{
 }
 
 .navBrand{
-  width: 50%;
+  width: 250px;
   height: auto;
 }
 
 .nav-item{
-  margin: 5%;
+  margin-right: 50%;
   color: red;
 }
 
