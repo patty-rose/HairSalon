@@ -8,19 +8,17 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    
-      <nav class="navbar navbar-expand">
+    <div class="container">
+      <nav class="navbar navbar-expand-sm navbar-toggleable-sm" role="navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" id="navbarLogo" href="@Url.Action("Index", "Home")">
-            <img class="navBrand" src="@Url.Content("~/img/logoPic.png")">
-          </a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a>@Html.ActionLink("Stylists", "Index", "Stylists")</a>
+          <ul class="nav navbar-nav">
+            <li class="navbar-brand">
+              <a class="nav-item" href="@Url.Action("Index", "Home")">
+                <img class="navBrand" src="@Url.Content("~/img/logoLongTransparent.png")">
+              </a>
             </li>
-            <li class="nav-item">
-              <a>@Html.ActionLink("Clients", "Index", "Clients")</a>
-            </li>
+            <li><a class="nav-link" href="@Url.Action("Index", "Stylists")">Stylists</a></li>
+            <li><a class="nav-link" href="@Url.Action("Index", "Clients")">Clients</a></li>
           </ul>
           @* <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,13 +26,13 @@
           </form> *@
         </div>
       </nav>
-    <div class="container">
       <div>
         @RenderBody()
       </div>
-      <div class="footer">
-        <img id="footer" src="~/img/logoLong.png">
-      </div>
+      <footer class="text-center">
+        <img src="~/img/logoTall.png"><br>
+        <div class="text-center p-2 fw-light">© 2022 Copyright: Patty Otero</div>
+      </footer>
     </div>
   </body>
 </html>
